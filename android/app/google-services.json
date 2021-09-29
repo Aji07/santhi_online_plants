@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "985116330657",
+    "project_id": "online-plants",
+    "storage_bucket": "online-plants.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985116330657:android:a763c0d0588b987a6c3ee0",
+        "android_client_info": {
+          "package_name": "com.example.santhi_online_plants"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985116330657-7nk3kstf987tunc2ro9ebta1aa05498u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.santhi_online_plants",
+            "certificate_hash": "9ef9168e77676739ba31ce4bbb296b87f9f56b5d"
+          }
+        },
+        {
+          "client_id": "985116330657-pkl2nd5goc4d40543v24ks2oitfr2t7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzFzibzTlhGZHVRKmar0Wz5TaQXf-9BFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985116330657-pkl2nd5goc4d40543v24ks2oitfr2t7p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
