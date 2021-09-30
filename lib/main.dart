@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:santhi_online_plants/Screens/Homepage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:santhi_online_plants/Screens/google login.dart';
+import 'package:santhi_online_plants/Screens/OnBoardScreen.dart';
+import 'package:santhi_online_plants/Screens/RegisterPage.dart';
 import 'package:santhi_online_plants/Screens/SplashScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
-void main(){
+void main()async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(PlantsApp());
 }
 

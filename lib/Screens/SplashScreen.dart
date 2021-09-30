@@ -7,15 +7,16 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(
-        Duration(seconds: 3),
+        Duration(seconds: 5),
             () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => OnBoardScreen()))
+                builder: (BuildContext context) => OnBoard()))
     );
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          SizedBox(height: 50),
           Container(
             height: 200,
             width: double.infinity,
@@ -24,6 +25,20 @@ class Splash extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage("assets/images/app logo.png"),
                 fit: BoxFit.contain,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15),
+            child: Container(
+              height: 50,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                image: DecorationImage(
+                  image: AssetImage("assets/images/app_icon.png"),
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
           ),

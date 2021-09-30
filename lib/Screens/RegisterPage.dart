@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:lottie/lottie.dart';
+import 'package:santhi_online_plants/Screens/Homepage.dart';
+import 'package:santhi_online_plants/Screens/google login.dart';
 import 'package:santhi_online_plants/Screens/LoginPage.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -12,15 +14,13 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
 
-  bool _isLoggedIn = false;
-  late GoogleSignInAccount _userObj;
-  GoogleSignIn _googleSignIn = GoogleSignIn();
 
   TextEditingController usernamecontroller = TextEditingController();
   TextEditingController emailcontroller = TextEditingController();
   final _formkey = GlobalKey<FormState>();
   final _scaffoldkey = GlobalKey<FormState>();
-
+  //late GoogleSignInAccount _googleSignInAccount;
+  GoogleSignIn _googleSignIn = GoogleSignIn();
   void validateandsave(){
     final form = _formkey.currentState;
     if(form!.validate()){
@@ -30,6 +30,7 @@ class _RegisterPageState extends State<RegisterPage> {
       print("Form is Invalid");
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,17 +133,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           GestureDetector(
-                            onTap: (){
-                              {
-                                _googleSignIn.signIn().then((userData) {
-                                  setState(() {
-                                    _isLoggedIn = true;
-                                    _userObj = userData!;
-                                  });
-                                }).catchError((e){
-                                  print(e);
-                                });
-                              }
+                            onTap: ()async{
+                              await _googleSignIn.signIn().then((userData) {
+                                print('${userData}');
+                                if(userData != null){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));                                }
+                                 }
+                                 );
                             },
                             child: Container(
                               height: 30,
@@ -164,7 +161,9 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                           SizedBox(width: 25),
                           new GestureDetector(
-                            onTap: (){ },
+                            onTap: (){
+
+                            },
                             child: Container(
                               height: 30,
                               width: 30,
