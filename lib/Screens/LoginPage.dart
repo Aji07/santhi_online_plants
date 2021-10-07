@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                     Container(
                       height: 170,
                       width: double.infinity,
-                     child: Lottie.asset("assets/images/plant_hand.json"),
+                      child: Lottie.asset("assets/images/plant_hand.json"),
                     ),
                     SizedBox(height: 15),
                     Text("Sign In",
